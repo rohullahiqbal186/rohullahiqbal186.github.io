@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohullah Iqbal | AI & XR Researcher, Unity Developer</title>
+  <meta name="description" content="Rohullah Iqbal: Master's student at Soonchunhyang University researching AI, multimodal sensor data and XR. Unity developer creating VR environments, 3D assets and editor tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #ffffff;
+      --text: #22272b;
+      --muted: #5e6669;
+      --sage: #5f7f7d;
+      --sage-light: #e3ebe9;
+      --wood: #8c6647;
+      --border: #e4ded4;
+      --dark: #141c24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+    a { color: var(--sage); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    nav { border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 10; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.2rem; color: var(--text); }
+    .logo:hover { text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 24px; }
+    nav ul a { color: var(--muted); font-weight: 500; font-size: 0.95rem; }
+    nav ul a:hover, nav ul a.active { color: var(--text); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 88px 0 72px; }
+    .eyebrow { color: var(--sage); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    h1 { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.15; max-width: 760px; margin-bottom: 20px; }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; margin-bottom: 32px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; }
+    .btn-primary { background: var(--sage); color: #fff; }
+    .btn-primary:hover { background: #4e6c6a; text-decoration: none; }
+    .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: var(--surface); }
+    .btn-outline:hover { border-color: var(--sage); text-decoration: none; }
+
+    /* Sections */
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
+    h2 { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.9rem; margin-bottom: 12px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 36px; }
+
+    /* Asset card */
+    .asset { display: grid; grid-template-columns: 1.2fr 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .asset-img { background: linear-gradient(160deg, #dcd2c3 0%, #c9bba6 55%, #8c6647 100%); min-height: 280px; position: relative; }
+    .asset-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .asset-img .placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .asset-img .placeholder span { background: rgba(20,28,36,0.88); color: #b3d9d1; padding: 14px 22px; border-radius: 6px; font-weight: 600; border: 2px solid #9ec2bd; }
+    .asset-body { padding: 32px; }
+    .tag { display: inline-block; background: var(--sage-light); color: var(--sage); font-size: 0.8rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+    .asset-body h3 { font-family: "Fraunces", serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; }
+    .asset-body p { color: var(--muted); margin-bottom: 16px; }
+    .asset-body ul { list-style: none; }
+    .asset-body li { padding-left: 22px; position: relative; margin-bottom: 6px; font-size: 0.95rem; }
+    .asset-body li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); }
+
+    /* Research grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .card h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.93rem; }
+    .card .bar { width: 28px; height: 3px; background: var(--wood); border-radius: 2px; margin-bottom: 14px; }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+    .about p { margin-bottom: 14px; color: var(--muted); }
+    .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .keywords span { background: var(--surface); border: 1px solid var(--border); padding: 5px 12px; border-radius: 999px; font-size: 0.85rem; }
+
+    /* CTA */
+    .cta { background: var(--dark); color: #eef1f0; border-radius: 16px; padding: 48px 40px; text-align: center; }
+    .cta h2 { color: #b3d9d1; }
+    .cta p { color: #c8cfcf; max-width: 560px; margin: 0 auto 24px; }
+
+    footer { padding: 32px 0 40px; color: var(--muted); font-size: 0.88rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer .links { display: flex; gap: 18px; }
+
+    @media (max-width: 820px) {
+      .asset, .about { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .about { gap: 16px; }
+    }
+    @media (max-width: 560px) {
+      nav ul { gap: 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 56px 0 48px; }
+      .asset-body, .cta { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="index.html" class="logo">Rohullah Iqbal</a>
+      <ul>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Researcher · Developer · Soonchunhyang University</p>
+      <h1>Combining AI and immersive technology to understand human behavior</h1>
+      <p class="lead">I'm a Master's student at Soonchunhyang University, South Korea, working on artificial intelligence, multimodal sensor data and Extended Reality (XR). Alongside my research, I build Unity assets and tools that I share with developers and researchers.</p>
+      <div class="btns">
+        <a href="#research" class="btn btn-primary">My research</a>
+        <a href="#assets" class="btn btn-outline">Unity assets</a>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="assets">
+    <div class="wrap">
+      <h2>Unity Assets</h2>
+      <p class="section-intro">Optimized, easy-to-use assets for games, VR/XR applications, simulations and research projects.</p>
+
+      <div class="asset">
+        <div class="asset-img">
+          <!-- Upload a screenshot named room.png to your repository and it will appear here -->
+          <img src="room.png" alt="Neutral VR waiting room with wooden slat wall, plants and information panel"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none"><span>Neutral VR Room</span></div>
+        </div>
+        <div class="asset-body">
+          <span class="tag">Coming soon to the Unity Asset Store</span>
+          <h3>Neutral VR Room Builder</h3>
+          <p>A one-click Unity editor tool that builds a clean, neutral VR waiting room for studies and apps: ideal for baselines, rest periods and questionnaires between experiences.</p>
+          <ul>
+            <li>Built from the menu in one click</li>
+            <li>Soft, natural color palette and warm lighting</li>
+            <li>Floating world-space information panel</li>
+            <li>Universal Render Pipeline and Built-in support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <h2>Research Interests</h2>
+      <p class="section-intro">My work sits at the intersection of AI, immersive computing, sensor analytics and human behavior.</p>
+      <div class="grid">
+        <div class="card"><div class="bar"></div><h3>AI &amp; Deep Learning</h3><p>Machine learning, deep neural networks, computer vision, object detection and image classification.</p></div>
+        <div class="card"><div class="bar"></div><h3>Sensor Data &amp; Multimodal AI</h3><p>Physiological signals, time-series analysis and multimodal sensor data.</p></div>
+        <div class="card"><div class="bar"></div><h3>VR, XR &amp; Unity</h3><p>Immersive environments, interactive systems and behavioral data analysis.</p></div>
+        <div class="card"><div class="bar"></div><h3>Eye Tracking &amp; Gaze</h3><p>Visual attention, gaze direction, head orientation and interaction with virtual objects and social agents.</p></div>
+        <div class="card"><div class="bar"></div><h3>Facial &amp; Body Tracking</h3><p>Facial movements, expression-related features, body movements and behavioral patterns.</p></div>
+        <div class="card"><div class="bar"></div><h3>Human-Centered AI</h3><p>Multimodal analysis for behavioral and developmental research, including autism and other developmental conditions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About Me</h2>
+      </div>
+      <div>
+        <p>I have a background in Software Engineering and a strong interest in Artificial Intelligence, Machine Learning, Deep Learning and intelligent interactive systems.</p>
+        <p>I aim to combine AI with immersive technologies to analyze multimodal data, understand human behavior and develop intelligent, data-driven applications. I welcome research collaborations, academic networking and innovative AI projects.</p>
+        <div class="keywords">
+          <span>Artificial Intelligence</span><span>Machine Learning</span><span>Deep Learning</span>
+          <span>Computer Vision</span><span>Multimodal AI</span><span>Time-Series Analysis</span>
+          <span>VR / XR</span><span>Unity</span><span>Eye Tracking</span>
+          <span>Human Behavior Analysis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Questions, support or collaboration?</h2>
+        <p>Need help with one of my Unity assets, or interested in a research collaboration? I'd be glad to hear from you.</p>
+        <a href="contact.html" class="btn btn-primary">Contact me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Rohullah Iqbal</span>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/rohullah-iqbal/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/rohullahiqbal186" target="_blank" rel="noopener">GitHub</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

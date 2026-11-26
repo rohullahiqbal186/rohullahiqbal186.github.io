@@ -1,0 +1,11 @@
+{
+  "name": "rohullahiqbal186.github.io",
+  "private": true,
+  "type": "module",
+  "description": "Static personal research site. No build step is needed to publish; these scripts are helpers only.",
+  "scripts": {
+    "preview": "python3 -m http.server 8000",
+    "build:hero": "node scripts/build-hero-svg.mjs",
+    "check": "node scripts/check-site.mjs"
+  }
+}

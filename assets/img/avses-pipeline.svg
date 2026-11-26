@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="300" viewBox="0 0 680 300" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif">
+  <title id="t">CNN and LSTM pipeline for recognising driver hand gestures</title>
+  <desc id="d">Frames from a rear-view video each pass through the same CNN, which produces a feature vector per frame. An LSTM reads the sequence of vectors and outputs a predicted gesture or signal class.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#4a5563"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" font-size="15" font-weight="600" fill="#18202b">Rear-view video frames</text>
+  <g fill="#fff" stroke="#9aa5b1">
+    <rect x="20" y="44" width="92" height="62" rx="4"/>
+    <rect x="132" y="44" width="92" height="62" rx="4"/>
+    <rect x="244" y="44" width="92" height="62" rx="4"/>
+    <rect x="356" y="44" width="92" height="62" rx="4"/>
+  </g>
+  <g fill="#2a55a0" fill-opacity="0.75">
+    <circle cx="50" cy="82" r="9"/><circle cx="170" cy="76" r="9"/><circle cx="286" cy="70" r="9"/><circle cx="402" cy="64" r="9"/>
+  </g>
+  <g font-size="14" fill="#4a5563" text-anchor="middle">
+    <text x="66" y="122">t1</text><text x="178" y="122">t2</text><text x="290" y="122">t3</text><text x="402" y="122">t4</text>
+  </g>
+  <g fill="none" stroke="#4a5563" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M66 130v20"/><path d="M178 130v20"/><path d="M290 130v20"/><path d="M402 130v20"/>
+    <path d="M66 188v20"/><path d="M178 188v20"/><path d="M290 188v20"/><path d="M402 188v20"/>
+    <path d="M460 236h70"/>
+  </g>
+  <g fill="#e9eef2" stroke="#2a55a0" stroke-width="1.5">
+    <rect x="24" y="152" width="84" height="34" rx="4"/><rect x="136" y="152" width="84" height="34" rx="4"/>
+    <rect x="248" y="152" width="84" height="34" rx="4"/><rect x="360" y="152" width="84" height="34" rx="4"/>
+  </g>
+  <g font-size="15" fill="#18202b" text-anchor="middle">
+    <text x="66" y="174">CNN</text><text x="178" y="174">CNN</text><text x="290" y="174">CNN</text><text x="402" y="174">CNN</text>
+  </g>
+  <rect x="20" y="212" width="440" height="48" rx="6" fill="#fff" stroke="#2a55a0" stroke-width="1.5"/>
+  <text x="240" y="241" text-anchor="middle" font-size="16" font-weight="600" fill="#18202b">LSTM over the frame sequence</text>
+  <rect x="534" y="212" width="126" height="48" rx="6" fill="#18202b"/>
+  <text x="597" y="232" text-anchor="middle" font-size="15" fill="#fff">predicted</text>
+  <text x="597" y="249" text-anchor="middle" font-size="15" fill="#fff">signal</text>
+  <text x="474" y="174" font-size="14" fill="#4a5563">spatial features</text>
+  <text x="474" y="190" font-size="14" fill="#4a5563">per frame</text>
+  <text x="20" y="290" font-size="14" fill="#4a5563">Schematic. The dot stands in for a hand; no project footage is shown.</text>
+</svg>

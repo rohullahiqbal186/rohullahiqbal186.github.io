@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomous Vehicle Safety Enhancement System (AVSES) | Rohullah Iqbal</title>
+  <meta name="description" content="Bachelor's thesis: recognizing drivers' hand gestures and rear signal lights in rear-view video with a CNN-LSTM model, using a custom annotated dataset.">
+  <link rel="canonical" href="https://rohullahiqbal186.github.io/projects/avses/">
+  <meta name="theme-color" content="#f4f6f7">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Rohullah Iqbal">
+  <meta property="og:title" content="Autonomous Vehicle Safety Enhancement System (AVSES)">
+  <meta property="og:description" content="Bachelor's thesis: a CNN-LSTM model that recognizes drivers' hand gestures and rear signal lights in rear-view video.">
+  <meta property="og:url" content="https://rohullahiqbal186.github.io/projects/avses/">
+  <meta property="og:image" content="https://rohullahiqbal186.github.io/assets/img/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="../../">Rohullah Iqbal</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../#research">Research</a></li>
+          <li><a href="../../#projects" aria-current="page">Projects</a></li>
+          <li><a href="../../#workshops">Workshops</a></li>
+          <li><a href="../../#about">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <header class="case-header">
+        <p class="breadcrumb"><a href="../../#projects">Selected projects</a></p>
+        <h1>Autonomous Vehicle Safety Enhancement System (AVSES)</h1>
+        <p class="summary">
+          My bachelor's thesis: a deep learning system that recognizes drivers' hand gestures and rear
+          signal lights in rear-view video, so that a following vehicle can tell early what the car
+          ahead intends to do.
+        </p>
+        <dl class="facts">
+          <dt>Status</dt><dd>Bachelor's thesis (final year project), BS Software Engineering, UAJK</dd>
+          <dt>My role</dt><dd>Designed and implemented the system; built and annotated the dataset</dd>
+          <dt>Methods</dt><dd>CNN for spatial features, LSTM for temporal modelling</dd>
+          <dt>Presented</dt><dd>Workshop for AI Explain Your Science</dd>
+        </dl>
+      </header>
+
+      <section class="case-body" aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <div class="prose">
+          <p>
+            Driver-assistance and autonomous systems usually read a vehicle's intentions from its
+            indicator and brake lights. In informal traffic, drivers often signal with a hand out of the
+            window instead of, or as well as, the lights. A system that only watches the lights misses
+            those signals.
+          </p>
+          <p>
+            The question for the thesis was whether a model could recognize these hand gestures, together
+            with rear signal indicators, from video taken behind the vehicle.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-body" aria-labelledby="data">
+        <h2 id="data">Data</h2>
+        <div class="prose">
+          <p>
+            I built a custom dataset for the project: video from real-world driving scenarios,
+            annotated for drivers' hand gestures and rear signal indicators.
+          </p>
+          <p class="note">The dataset contains real road footage, so it isn't published here.</p>
+        </div>
+      </section>
+
+      <section class="case-body" aria-labelledby="method">
+        <h2 id="method">Method</h2>
+        <div class="prose">
+          <p>
+            A gesture is a movement, not a pose, so a single frame isn't enough. The model has two parts:
+          </p>
+          <ul>
+            <li>A <strong>CNN</strong> extracts spatial features from each frame.</li>
+            <li>An <strong>LSTM</strong> reads the sequence of frame features and classifies the gesture or signal.</li>
+          </ul>
+          <figure class="case-figure">
+            <img src="../../assets/img/avses-pipeline.svg" width="680" height="300"
+                 alt="Diagram: four rear-view video frames each pass through the same CNN; an LSTM reads the sequence and outputs the predicted signal.">
+            <figcaption>CNN per frame, LSTM across frames. Schematic only.</figcaption>
+          </figure>
+          <p>
+            The illustration at the top of the <a href="../../">home page</a> is a loose picture of the same idea.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-body" aria-labelledby="outcome">
+        <h2 id="outcome">Outcome</h2>
+        <div class="prose">
+          <p>
+            The thesis produced the annotated dataset and a CNN-LSTM recognition system for hand gestures
+            and rear signals. I later taught a workshop on the project for AI Explain Your Science.
+          </p>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="More projects">
+        <a href="../bot2-scoring/">Previous: BOT-2 drawing scoring</a>
+        <a href="../../#projects">All projects</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Rohullah Iqbal</p>
+      <ul>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="https://github.com/rohullahbalti">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/rohullah-iqbal">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

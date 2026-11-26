@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="300" viewBox="0 0 680 300" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif">
+  <title id="t">Two-stage scoring pipeline for BOT-2 drawings</title>
+  <desc id="d">A scanned drawing goes to a shape classifier. The classifier sends it to a scoring model trained for that shape. Each scoring model is binary or ordinal and outputs an item score.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#4a5563"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#4a5563" stroke-width="1.5" marker-end="url(#a)">
+    <path d="M128 150h40"/>
+    <path d="M318 150c24 0 24-82 52-82"/>
+    <path d="M318 150h52"/>
+    <path d="M318 150c24 0 24 82 52 82"/>
+    <path d="M530 68h36"/>
+    <path d="M530 150h36"/>
+    <path d="M530 232h36"/>
+  </g>
+  <!-- input -->
+  <rect x="20" y="104" width="108" height="92" rx="6" fill="#fff" stroke="#9aa5b1"/>
+  <path d="M46 172 74 124 102 172z" fill="none" stroke="#3d4a59" stroke-width="2" stroke-linejoin="round"/>
+  <text x="74" y="222" text-anchor="middle" font-size="15" fill="#4a5563">Drawing</text>
+  <!-- stage 1 -->
+  <rect x="170" y="112" width="148" height="76" rx="6" fill="#e9eef2" stroke="#2a55a0" stroke-width="1.5"/>
+  <text x="244" y="142" text-anchor="middle" font-size="16" font-weight="600" fill="#18202b">Stage 1</text>
+  <text x="244" y="162" text-anchor="middle" font-size="15" fill="#18202b">shape classifier</text>
+  <!-- stage 2 -->
+  <g font-size="15" fill="#18202b">
+    <rect x="372" y="44" width="158" height="48" rx="6" fill="#fff" stroke="#9aa5b1"/>
+    <text x="451" y="64" text-anchor="middle" font-weight="600">Scorer, shape A</text>
+    <text x="451" y="82" text-anchor="middle" fill="#4a5563">binary or ordinal</text>
+    <rect x="372" y="126" width="158" height="48" rx="6" fill="#fff" stroke="#9aa5b1"/>
+    <text x="451" y="146" text-anchor="middle" font-weight="600">Scorer, shape B</text>
+    <text x="451" y="164" text-anchor="middle" fill="#4a5563">binary or ordinal</text>
+    <rect x="372" y="208" width="158" height="48" rx="6" fill="#fff" stroke="#9aa5b1"/>
+    <text x="451" y="228" text-anchor="middle" font-weight="600">Scorer, other shapes</text>
+    <text x="451" y="246" text-anchor="middle" fill="#4a5563">one model per shape</text>
+  </g>
+  <text x="451" y="24" text-anchor="middle" font-size="15" font-weight="600" fill="#2a55a0">Stage 2</text>
+  <g font-size="15" fill="#18202b">
+    <text x="572" y="72">score</text>
+    <text x="572" y="154">score</text>
+    <text x="572" y="236">score</text>
+  </g>
+  <text x="20" y="290" font-size="14" fill="#4a5563">Backbones: MobileNetV2 and DenseNet121. Schematic, not drawn from data.</text>
+</svg>

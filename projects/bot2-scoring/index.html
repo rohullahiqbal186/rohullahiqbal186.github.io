@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatic scoring of BOT-2 drawing tasks | Rohullah Iqbal</title>
+  <meta name="description" content="A two-stage deep learning pipeline that classifies BOT-2 drawing shapes and predicts expert-like scores with shape-specific binary and ordinal models (MobileNetV2, DenseNet121).">
+  <link rel="canonical" href="https://rohullahiqbal186.github.io/projects/bot2-scoring/">
+  <meta name="theme-color" content="#f4f6f7">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Rohullah Iqbal">
+  <meta property="og:title" content="Automatic scoring of BOT-2 drawing tasks">
+  <meta property="og:description" content="Two-stage CNN pipeline: classify the drawn shape, then predict the expert score with a model trained for that shape.">
+  <meta property="og:url" content="https://rohullahiqbal186.github.io/projects/bot2-scoring/">
+  <meta property="og:image" content="https://rohullahiqbal186.github.io/assets/img/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="../../">Rohullah Iqbal</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../#research">Research</a></li>
+          <li><a href="../../#projects" aria-current="page">Projects</a></li>
+          <li><a href="../../#workshops">Workshops</a></li>
+          <li><a href="../../#about">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <header class="case-header">
+        <p class="breadcrumb"><a href="../../#projects">Selected projects</a></p>
+        <h1>Automatic scoring of BOT-2 drawing tasks</h1>
+        <p class="summary">
+          A two-stage deep learning pipeline that first recognizes which shape a drawing belongs to,
+          then predicts the score an expert examiner would give it.
+        </p>
+        <dl class="facts">
+          <dt>Status</dt><dd>Completed project</dd>
+          <dt>My role</dt><dd>Developed the pipeline and its models</dd>
+          <dt>Models</dt><dd>MobileNetV2, DenseNet121</dd>
+          <dt>Results</dt><dd>99% shape-classification accuracy; over 83% average scoring accuracy</dd>
+        </dl>
+      </header>
+
+      <section class="case-body" aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <div class="prose">
+          <p>
+            The Bruininks-Oseretsky Test of Motor Proficiency, Second Edition (BOT-2) includes drawing
+            items, such as copying a given shape. A trained examiner scores each drawing against written
+            criteria. That takes time, and the result depends partly on the examiner's judgement.
+          </p>
+          <p>
+            I wanted to know whether a model could do two things an examiner does: recognize which item a
+            drawing answers, and then give it the score an expert would.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-body" aria-labelledby="approach">
+        <h2 id="approach">Approach</h2>
+        <div class="prose">
+          <p>
+            I split the task in two. Each shape has its own scoring criteria, so one model scoring every
+            shape would have to learn several rubrics at once.
+          </p>
+          <ul>
+            <li><strong>Stage 1, shape classification.</strong> A CNN identifies which BOT-2 shape the drawing belongs to.</li>
+            <li><strong>Stage 2, scoring.</strong> The drawing goes to a scoring model trained only on that shape. Depending on the item, the scoring model is binary or ordinal, so its output matches how that item is scored.</li>
+          </ul>
+          <p>I used MobileNetV2 and DenseNet121 as backbones for these models.</p>
+          <figure class="case-figure">
+            <img src="../../assets/img/bot2-pipeline.svg" width="680" height="300"
+                 alt="Diagram: a drawing goes to a Stage 1 shape classifier, which routes it to one of several Stage 2 scorers, one per shape, each binary or ordinal, producing a score.">
+            <figcaption>The two-stage pipeline. Schematic only.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-body" aria-labelledby="results">
+        <h2 id="results">Results</h2>
+        <div class="prose">
+          <p>
+            Shape classification reached 99% accuracy. The shape-specific scoring models reached an
+            average scoring accuracy of over 83%.
+          </p>
+          <p class="note">
+            The drawings were made by people taking the test, so I don't show any samples or share the data here.
+          </p>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="More projects">
+        <a href="../../#projects">All projects</a>
+        <a href="../avses/">Next: driver gesture recognition (AVSES)</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Rohullah Iqbal</p>
+      <ul>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="https://github.com/rohullahbalti">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/rohullah-iqbal">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
